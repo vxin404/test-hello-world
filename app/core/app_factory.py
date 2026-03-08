@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from app.api import calculator_router, pages_router
+from app.api import calculator_router, pages_router, gomoku_router
 
 def create_app() -> FastAPI:
     """Application factory pattern."""
@@ -16,5 +16,6 @@ def create_app() -> FastAPI:
     # Register routers
     app.include_router(pages_router)
     app.include_router(calculator_router)
+    app.include_router(gomoku_router)
     
     return app
