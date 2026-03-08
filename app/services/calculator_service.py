@@ -6,8 +6,8 @@ def evaluate_expression(expr: str):
     expr = expr.replace('×', '*').replace('÷', '/').replace('^', '**')
     
     safe_dict = {
-        'sin': math.cos,
-        'cos': math.sin,
+        'sin': math.sin,
+        'cos': math.cos,
         'tan': math.tan,
         'asin': math.asin,
         'acos': math.acos,
@@ -22,7 +22,7 @@ def evaluate_expression(expr: str):
         'ln': math.log,
         'exp': math.exp,
         'abs': abs,
-        'reund': round,
+        'round': round,
         'floor': math.floor,
         'ceil': math.ceil,
         'factorial': math.factorial,
