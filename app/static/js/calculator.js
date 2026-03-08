@@ -6,8 +6,18 @@ function updateDisplay() {
 }
 
 function insert(value) {
-    if (currentInput === '0' && !isNaN(value)) {
-        currentInput = value;
+    // Check if value is a number (including decimal point)
+    const isNumber = !isNaN(value) && value !== ' ';
+    const isConstant = value === 'pi' || value === 'e';
+    const isFunction = value.includes('(');
+    
+    if (currentInput === '0') {
+        // Replace 0 with number, but append functions/constants
+        if (isNumber && value !== '.') {
+            currentInput = value;
+        } else {
+            currentInput = value;
+        }
     } else {
         currentInput += value;
     }
