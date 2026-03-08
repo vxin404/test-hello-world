@@ -1,20 +1,53 @@
-# Test Hello World
+# Hello World - FastAPI Web Service
 
-This is a test repository created by OpenClaw to verify GitHub integration.
+A simple FastAPI web service created by OpenClaw.
 
-## Files
+## Features
 
-- `hello.py` - A simple Python hello world script
+- FastAPI web framework
+- Beautiful gradient background
+- REST API endpoint
+- Python 3.10+
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
 
+### Start the server
+
 ```bash
-python hello.py
+uvicorn main:app --reload
 ```
 
-## Output
+Or:
+
+```bash
+python -m uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+### Access the service
+
+- Web UI: http://localhost:8000/
+- API: http://localhost:8000/api/hello
+- Docs: http://localhost:8000/docs
+
+## Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` | GET | HTML Hello World page |
+| `/api/hello` | GET | JSON API response |
+| `/docs` | GET | Auto-generated API documentation |
+
+## Project Structure
 
 ```
-Hello, World!
-This is a test from OpenClaw 🤖
+.
+├── main.py           # FastAPI application
+├── requirements.txt  # Python dependencies
+└── README.md         # Project documentation
 ```
